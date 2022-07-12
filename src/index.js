@@ -4,29 +4,18 @@ import ReactDOM from "react-dom"
 import {
   FlexBox,
   Heading,
-  SpectacleLogo,
   UnorderedList,
-  CodeSpan,
-  OrderedList,
   ListItem,
   FullScreen,
   Progress,
   Appear,
-  Stepper,
   Slide,
   Deck,
   Text,
-  Grid,
   Box,
-  Image,
-  CodePane,
-  MarkdownSlide,
-  MarkdownSlideSet,
+  Link,
   Notes,
 } from "spectacle"
-
-const formidableLogo =
-  "https://avatars2.githubusercontent.com/u/5078602?s=280&v=4"
 
 // SPECTACLE_CLI_THEME_START
 const theme = {
@@ -55,23 +44,6 @@ const template = () => (
 )
 // SPECTACLE_CLI_TEMPLATE_END
 
-const SlideFragments = () => (
-  <>
-    <Slide>
-      <Text>This is a slide fragment.</Text>
-    </Slide>
-    <Slide>
-      <Text>This is also a slide fragment.</Text>
-      <Appear>
-        <Text>This item shows up!</Text>
-      </Appear>
-      <Appear>
-        <Text>This item also shows up!</Text>
-      </Appear>
-    </Slide>
-  </>
-)
-
 const Presentation = () => (
   <Deck theme={theme} template={template}>
     <Slide>
@@ -88,6 +60,128 @@ const Presentation = () => (
         </ListItem>
         <ListItem>The 97.4% North Star</ListItem>
       </UnorderedList>
+    </Slide>
+    <Slide>
+      <Heading>C&apos;est quoi l&apos;accessibilité ?</Heading>
+      <Text>Le fait qu'un site soit utilisable par le plus grand nombre.</Text>
+      <Text>
+        Notamment par les personnes qui naviguent sur internet d&apos;une autre
+        manière qu'avec le clavier et la souris.
+      </Text>
+      <Notes>
+        <ul>
+          <li>comme pour les bâtiments, le métro, le bus</li>
+          <li>il s&apos;agit de l&apos;utilisabilité du site</li>
+        </ul>
+      </Notes>
+    </Slide>
+    <Slide>
+      <Heading>L'autre manière de naviguer sur internet</Heading>
+      <Notes>
+        <ul>
+          <li>Concerne personnes avec handicap physique moteur</li>
+          <li>Contacteur : pénible de naviguer sur un site inaccessible</li>
+        </ul>
+      </Notes>
+      <UnorderedList>
+        <Appear>
+          <ListItem>appareil de suivi de la tête ou des yeux</ListItem>
+        </Appear>
+        <Appear>
+          <ListItem>joystick</ListItem>
+        </Appear>
+        <Appear>
+          <ListItem>commande vocale</ListItem>
+        </Appear>
+        <Appear>
+          <ListItem>contacteur (souffle, muscle)</ListItem>
+        </Appear>
+        <Appear>
+          <ListItem>licorne (casque avec une tige montée)</ListItem>
+        </Appear>
+      </UnorderedList>
+    </Slide>
+    <Slide>
+      <Heading>Pourquoi l&apos;accessibilité ?</Heading>
+      <UnorderedList>
+        <Appear>
+          <ListItem>
+            Améliorer l&apos;accessibilité pour certains améliore
+            l&apos;utilisabilité pour tous
+          </ListItem>
+        </Appear>
+        <Appear>
+          <ListItem>
+            <Text>Obligation légale</Text>
+            <UnorderedList>
+              <Appear>
+                <ListItem>
+                  Site du service public (<strong>Septembre 2020</strong>)
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Secteur privé CA &gt; 250M euros (
+                  <strong>Septembre 2020</strong>)
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Apps mobiles (<strong>Juin 2021</strong>)
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  E-commerce, banques et transport (<strong>2025</strong>)
+                </ListItem>
+              </Appear>
+            </UnorderedList>
+          </ListItem>
+        </Appear>
+        <Notes>
+          <ul>
+            <li>Texte bcp trop petit</li>
+            <li>Constraste des couleurs mal ajusté (PS : devtools)</li>
+            <li>Navigation dans les formulaires</li>
+            <li>
+              Pop up qui ne se ferme pas avec la touche <kbd>Esc</kbd>
+            </li>
+          </ul>
+        </Notes>
+      </UnorderedList>
+    </Slide>
+    <Slide>
+      <Heading>Les problèmes les plus courants</Heading>
+      <Text>
+        <strong>97.4%</strong> des pages d&apos;accueil dans le Top 1 000 000
+        des sites ont des problèmes d&apos;accessibilité basiques. Par exemple :
+      </Text>
+      <UnorderedList>
+        <ListItem>images sans texte de description</ListItem>
+        <ListItem>lien d&apos;accès rapide manquant</ListItem>
+        <ListItem>mauvaise hiérarchie des titres</ListItem>
+      </UnorderedList>
+    </Slide>
+    <Slide>
+      <Heading>Quelques exemples concrets</Heading>
+      <UnorderedList>
+        <ListItem>
+          <Link href="https://optiweb.test-hydra-master.kozea.fr/">
+            Pharminfo
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link href="https://www.nytimes.com/international/">NY Times</Link>
+        </ListItem>
+        <ListItem>
+          <Link href="https://www.opquast.com/">Opquast</Link>
+        </ListItem>
+      </UnorderedList>
+    </Slide>
+    <Slide>
+      <FlexBox height="100%">
+        <Heading>Merci à tous 😁</Heading>
+      </FlexBox>
     </Slide>
   </Deck>
 )
